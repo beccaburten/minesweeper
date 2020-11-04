@@ -109,8 +109,8 @@ body {
 }
 
 .lose-modal {
-  margin: 50px;
-  padding: 30px;
+  margin: 100px;
+  padding: 40px;
   border-radius: 10px;
   z-index: 10;
   display: inline-block;
@@ -121,8 +121,8 @@ body {
 }
 
 .win-modal {
-  margin: 50px;
-  padding: 30px;
+  margin: 100px;
+  padding: 40px;
   border-radius: 10px;
   z-index: 10;
   display: inline-block;
