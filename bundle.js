@@ -239,15 +239,36 @@ var Game = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "newGame",
+    value: function newGame(e) {
+      e.preventDefault();
+      this.setState({
+        board: new _minesweeper__WEBPACK_IMPORTED_MODULE_1__["Board"](9, 10)
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var status;
 
       if (this.state.board.won()) {
-        status = "Congrats you won!";
+        status = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          "class": "modal"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          "class": "won"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "YOU DID IT!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Way to sweep those mines. Think you could do it again?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "new-game",
+          onClick: this.newGame
+        }, "Play Again"))); // status = "Congrats you won!";
       } else if (this.state.board.lost()) {
-        // status = "💣 KABOOM 💣 You lost! Play again?";
-        window.alert("BANG! Game Over.");
+        status = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          "class": "modal"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          "class": "lost"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GAME OVER."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Maybe next time..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "new-game",
+          onClick: this.newGame
+        }, "Play Again"))); // status = "BANG! Game Over."
       } else {
         status = "";
       }

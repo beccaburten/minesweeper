@@ -21,13 +21,31 @@ class Game extends React.Component {
         this.setState({ board: this.state.board });
     }
 
+    newGame(e) {
+        e.preventDefault();
+        this.setState({board: new Minesweeper.Board(9, 10)})
+    }
+
     render(){
         let status;
         if (this.state.board.won()) {
-            status = "Congrats you won!";
+           status = (<div class="modal">
+                <div class="won">
+                    <h1>YOU DID IT!</h1>
+                    <h3>Way to sweep those mines. Think you could do it again?</h3>
+                    <button className="new-game" onClick={this.newGame}>Play Again</button>
+                </div>
+            </div> )
+            // status = "Congrats you won!";
         } else if (this.state.board.lost()) {
-            // status = "💣 KABOOM 💣 You lost! Play again?";
-            window.alert("BANG! Game Over.")
+            status = (<div class="modal">
+                <div class="lost">
+                    <h1>GAME OVER.</h1>
+                    <h3>Maybe next time...</h3>
+                    <button className="new-game" onClick={this.newGame}>Play Again</button>
+                </div>
+            </div> )
+            // status = "BANG! Game Over."
         } else {
             status = "";
         }

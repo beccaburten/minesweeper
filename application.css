@@ -39,7 +39,7 @@ p {
     float: left;
     border-style: outset;
     border-width: 2px;
-    line-height: 20px;
+    line-height: 30px;
     padding-left: 3px;
     font-size: 14px;
     font-weight: bold;
@@ -48,13 +48,13 @@ p {
 }
 
 .revealed {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     background: lightgray;
     float: left;
     border-style: inset;
     border-width: 2px;
-    line-height: 20px;
+    line-height: 30px;
     padding-left: 3px;
     font-size: 14px;
     font-weight: bold;
