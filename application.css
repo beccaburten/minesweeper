@@ -1,0 +1,98 @@
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: -4px 2px darkred;
+    font-size: 4em;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    font-size: 1em;
+    background: darkred;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tile {
+    height: 30px;
+    width: 30px;
+    background: lightgray;
+    float: left;
+    border-style: outset;
+    border-width: 2px;
+    line-height: 20px;
+    padding-left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+
+.revealed {
+    height: 20px;
+    width: 20px;
+    background: lightgray;
+    float: left;
+    border-style: inset;
+    border-width: 2px;
+    line-height: 20px;
+    padding-left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+
+.flagged {
+    color: red;
+}
+
+.bombed {
+    color: maroon;
+}
+
+body {
+    font-family: 'Turret Road', cursive;
+    background-image: url("https://media.giphy.com/media/hSLDN6zfh2Yy4ekMWi/giphy.gif");
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.fullscreen {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
