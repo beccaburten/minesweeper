@@ -8,6 +8,7 @@ class Game extends React.Component {
         this.state = {board: new Minesweeper.Board(9, 10)}; // or Minesweeper.Board as React component?
         // ^ this connects us to the backend logic
         this.updateGame = this.updateGame.bind(this);
+        this.newGame = this.newGame.bind(this);
     }
 
     updateGame(tile, flagged){
@@ -29,8 +30,9 @@ class Game extends React.Component {
     render(){
         let status;
         if (this.state.board.won()) {
-           status = (<div class="modal">
-                <div class="won">
+           status = (
+           <div className="modal-background">
+                <div className="win-modal">
                     <h1>YOU DID IT!</h1>
                     <h3>Way to sweep those mines. Think you could do it again?</h3>
                     <button className="new-game" onClick={this.newGame}>Play Again</button>
@@ -38,8 +40,9 @@ class Game extends React.Component {
             </div> )
             // status = "Congrats you won!";
         } else if (this.state.board.lost()) {
-            status = (<div class="modal">
-                <div class="lost">
+            status = (
+            <div className="modal-background">
+                <div className="lose-modal">
                     <h1>GAME OVER.</h1>
                     <h3>Maybe next time...</h3>
                     <button className="new-game" onClick={this.newGame}>Play Again</button>

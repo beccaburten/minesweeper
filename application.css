@@ -3,6 +3,7 @@ h1 {
     color: white;
     text-shadow: -4px 2px darkred;
     font-size: 4em;
+    margin: 20px 0px 20px 0px;
 }
 
 h2 {
@@ -95,4 +96,59 @@ body {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+}
+
+.lose-modal {
+  margin: 50px;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 10;
+  display: inline-block;
+  background-image: url(https://media.giphy.com/media/YA6dmVW0gfIw8/giphy.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.win-modal {
+  margin: 50px;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 10;
+  display: inline-block;
+  background-image: url(https://media.giphy.com/media/ZvJ0bHvAy1N9S/giphy.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.new-game {
+    font-family: inherit;
+    border: 0;
+    outline: none;
+    padding: 15px 40px 15px 40px;
+    background-color: rgba(1, 1, 1, 0.5);
+    transition: background-color 0.5s;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.new-game:hover {
+    cursor: pointer;
+    background-color: rgba(1, 1, 1, 1);;
+    transition: background-color 0.5s;
+    transition-timing-function: ease-out;
 }

@@ -220,6 +220,7 @@ var Game = /*#__PURE__*/function (_React$Component) {
     // ^ this connects us to the backend logic
 
     _this.updateGame = _this.updateGame.bind(_assertThisInitialized(_this));
+    _this.newGame = _this.newGame.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -253,18 +254,18 @@ var Game = /*#__PURE__*/function (_React$Component) {
 
       if (this.state.board.won()) {
         status = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          "class": "modal"
+          className: "modal-background"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          "class": "won"
+          className: "win-modal"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "YOU DID IT!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Way to sweep those mines. Think you could do it again?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "new-game",
           onClick: this.newGame
         }, "Play Again"))); // status = "Congrats you won!";
       } else if (this.state.board.lost()) {
         status = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          "class": "modal"
+          className: "modal-background"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          "class": "lost"
+          className: "lose-modal"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GAME OVER."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Maybe next time..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "new-game",
           onClick: this.newGame
