@@ -227,8 +227,6 @@ var Game = /*#__PURE__*/function (_React$Component) {
   _createClass(Game, [{
     key: "updateGame",
     value: function updateGame(tile, flagged) {
-      //will change board instance on line 7 to setState using minesweeper.js file
-      //toggleFlag() or explore()
       if (flagged) {
         tile.toggleFlag();
       } else {
@@ -254,30 +252,30 @@ var Game = /*#__PURE__*/function (_React$Component) {
 
       if (this.state.board.won()) {
         status = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "modal-background"
+          className: "dark-background"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "win-modal"
+          className: "win"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "YOU DID IT!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Way to sweep those mines. Think you could do it again?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "new-game",
           onClick: this.newGame
-        }, "Play Again"))); // status = "Congrats you won!";
+        }, "Play Again")));
       } else if (this.state.board.lost()) {
         status = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "modal-background"
+          className: "dark-background"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "lose-modal"
+          className: "lose"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GAME OVER."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Maybe next time..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "new-game",
           onClick: this.newGame
-        }, "Play Again"))); // status = "BANG! Game Over."
+        }, "Play Again")));
       } else {
         status = "";
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_board__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, " ", status, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_board__WEBPACK_IMPORTED_MODULE_2__["default"], {
         board: this.state.board,
         updateGame: this.updateGame
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, " ", status, " "));
+      }));
     }
   }]);
 
@@ -334,8 +332,7 @@ var Tile = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Tile);
 
     _this = _super.call(this, props);
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this)); // this.state = {revealed: false, bombed: false, flagged: false}
-
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -353,17 +350,15 @@ var Tile = /*#__PURE__*/function (_React$Component) {
       var cn;
 
       if (this.props.object.flagged) {
-        // text = String.fromCharCode(9873);
         text = "⚑";
         cn = "tile flagged";
       } else if (this.props.object.bombed && this.props.object.explored) {
-        // text = "&#9762;";
         text = "💣";
         cn = "tile bombed";
       } else if (this.props.object.explored) {
         text = this.props.object.adjacentBombCount();
         if (text === 0) text = "";
-        cn = "tile revealed"; // explored?
+        cn = "tile revealed";
       } else {
         text = "";
         cn = "tile";
@@ -380,9 +375,7 @@ var Tile = /*#__PURE__*/function (_React$Component) {
   return Tile;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Tile); //Char	Dec	    Hex		Name
-//☢	    9762	2622	RADIOACTIVE SIGN
-//⚑	    9873	2691	BLACK FLAG
+/* harmony default export */ __webpack_exports__["default"] = (Tile);
 
 /***/ }),
 

@@ -12,8 +12,6 @@ class Game extends React.Component {
     }
 
     updateGame(tile, flagged){
-//will change board instance on line 7 to setState using minesweeper.js file
-//toggleFlag() or explore()
         if (flagged) {
             tile.toggleFlag();
         } else {
@@ -31,32 +29,30 @@ class Game extends React.Component {
         let status;
         if (this.state.board.won()) {
            status = (
-           <div className="modal-background">
-                <div className="win-modal">
+           <div className="dark-background">
+                <div className="win">
                     <h1>YOU DID IT!</h1>
                     <h3>Way to sweep those mines. Think you could do it again?</h3>
                     <button className="new-game" onClick={this.newGame}>Play Again</button>
                 </div>
             </div> )
-            // status = "Congrats you won!";
         } else if (this.state.board.lost()) {
             status = (
-            <div className="modal-background">
-                <div className="lose-modal">
+            <div className="dark-background">
+                <div className="lose">
                     <h1>GAME OVER.</h1>
                     <h3>Maybe next time...</h3>
                     <button className="new-game" onClick={this.newGame}>Play Again</button>
                 </div>
             </div> )
-            // status = "BANG! Game Over."
         } else {
             status = "";
         }
 
         return (
             <div>
+               <h2> {status} </h2>
                 < Board board={this.state.board} updateGame={this.updateGame} />
-                <h2> {status} </h2>
             </div>
         )
     }

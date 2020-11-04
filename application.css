@@ -98,7 +98,7 @@ body {
     right: 1rem;
 }
 
-.modal-background {
+.dark-background {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -108,7 +108,7 @@ body {
   z-index: 5;
 }
 
-.lose-modal {
+.lose {
   margin: 100px;
   padding: 40px;
   border-radius: 10px;
@@ -120,7 +120,7 @@ body {
   color: white;
 }
 
-.win-modal {
+.win {
   margin: 100px;
   padding: 40px;
   border-radius: 10px;

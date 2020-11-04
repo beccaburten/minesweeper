@@ -5,7 +5,6 @@ class Tile extends React.Component{
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        // this.state = {revealed: false, bombed: false, flagged: false}
     }
 
     handleClick(e) {
@@ -18,17 +17,15 @@ class Tile extends React.Component{
         let text;
         let cn;
         if (this.props.object.flagged) {
-            // text = String.fromCharCode(9873);
             text = "⚑";
-           cn = "tile flagged";
+            cn = "tile flagged";
         } else if (this.props.object.bombed && this.props.object.explored) {
-            // text = "&#9762;";
             text = "💣";
             cn = "tile bombed";
         } else if (this.props.object.explored) {
             text = this.props.object.adjacentBombCount();
             if(text === 0) text = "";
-            cn = "tile revealed"; // explored?
+            cn = "tile revealed"; 
         } else {
             text = "";
             cn = "tile";
@@ -44,6 +41,3 @@ class Tile extends React.Component{
 }
 
 export default Tile;
-//Char	Dec	    Hex		Name
-//☢	    9762	2622	RADIOACTIVE SIGN
-//⚑	    9873	2691	BLACK FLAG
